@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <title>Weather</title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -31,16 +30,20 @@
             </div>
         </form>
     </center>
-        <div class="row">
-            {% if country_code and coordinate and temp and pressure and humidity %}
-                <div class="col-md-6 col-md-offset-3">
-                    <h3>Country code: {{ country_code }}</h3>
-                    <h5>Coordinate: {{ coordinate }}</h5>
-                    <h5>Temp: {{ temp }}</h5>
-                    <h5>Pressure: {{ pressure }}</h5>
-                    <h5>Humidity: {{ humidity }}</h5>
-                </div>
-            {% endif %}
-        </div>
+    <div class="row">
+        {% if country_code and coordinate and temp and pressure and humidity %}
+            <div class="col-md-6 col-md-offset-3">
+                <h3>Country code: {{ country_code }}</h3>
+                <h5>Coordinate: {{ coordinate }}</h5>
+                <h5>Temp: {{ temp }}</h5>
+                <h5>Pressure: {{ pressure }}</h5>
+                <h5>Humidity: {{ humidity }}</h5>
+            </div>
+        {% endif %}
+    </div>
+    <br/>
+    <div class="row text-center">
+        <a href="{% url 'history' %}" class="btn btn-success">View History</a>
+    </div>
 </body>
 </html>

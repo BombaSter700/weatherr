@@ -20,4 +20,5 @@ from app import views
 
 urlpatterns = [
     path('', views.index),
+    path('history/', views.history_view, name='history'),
 ]

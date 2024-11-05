@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>WeatherHistory</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="row" style="background-color: green; color: white;">
+        <h1 class="col-md-12 text-center">Weather History</h1>
+    </nav>
+    <div class="container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Date/Time</th>
+                    <th>City</th>
+                    <th>Country Code</th>
+                    <th>Coordinate</th>
+                    <th>Temperature</th>
+                    <th>Description</th>
+                    <th>Pressure</th>
+                    <th>Humidity</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for entry in history %}
+                    <tr>
+                        <td>{{ entry.datetime }}</td>
+                        <td>{{ entry.city }}</td>
+                        <td>{{ entry.country_code }}</td>
+                        <td>{{ entry.coordinate }}</td>
+                        <td>{{ entry.temp }}</td>
+                        <td>{{ entry.description }}</td>
+                        <td>{{ entry.pressure }}</td>
+                        <td>{{ entry.humidity }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button onclick="window.history.back()" class="btn btn-primary">Back</button>
+    </div>
+</body>
+</html>
